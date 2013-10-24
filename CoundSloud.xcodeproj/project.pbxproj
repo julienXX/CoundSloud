@@ -39,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F990B7FA18197EE800F4EB70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F990B7F618197EE800F4EB70 /* EECircularMusicPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 98CA33AB16324ECF00E8FB73;
+			remoteInfo = EECircularMusicPlayer;
+		};
 		F9E9C7E1181949C700C616A5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F9E9C7B3181949C700C616A5 /* Project object */;
@@ -112,6 +119,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F990B7F618197EE800F4EB70 /* EECircularMusicPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EECircularMusicPlayer.xcodeproj; path = EECircularMusicPlayerControl/EECircularMusicPlayer.xcodeproj; sourceTree = "<group>"; };
 		F9E9C7BB181949C700C616A5 /* CoundSloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoundSloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E9C7BE181949C700C616A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F9E9C7C0181949C700C616A5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -185,9 +193,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F990B7F718197EE800F4EB70 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F990B7FB18197EE800F4EB70 /* EECircularMusicPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F9E9C7B2181949C700C616A5 = {
 			isa = PBXGroup;
 			children = (
+				F990B7F618197EE800F4EB70 /* EECircularMusicPlayer.xcodeproj */,
 				F9E9C9721819529800C616A5 /* SoundCloud.bundle */,
 				F9E9C96018194B5B00C616A5 /* OHAttributedLabel.xcodeproj */,
 				F9E9C95718194B5100C616A5 /* OAuth2Client.xcodeproj */,
@@ -384,6 +401,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = F990B7F718197EE800F4EB70 /* Products */;
+					ProjectRef = F990B7F618197EE800F4EB70 /* EECircularMusicPlayer.xcodeproj */;
+				},
+				{
 					ProductGroup = F9E9C94F18194B4700C616A5 /* Products */;
 					ProjectRef = F9E9C94E18194B4700C616A5 /* JSONKit.xcodeproj */;
 				},
@@ -413,6 +434,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		F990B7FB18197EE800F4EB70 /* EECircularMusicPlayer.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = EECircularMusicPlayer.app;
+			remoteRef = F990B7FA18197EE800F4EB70 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		F9E9C94218194B2200C616A5 /* SoundCloudAPI.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -641,6 +669,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
+				SDKROOT = iphoneos7.0;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -663,6 +693,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
+				SDKROOT = iphoneos7.0;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

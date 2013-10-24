@@ -13,3 +13,6 @@
 [submodule "CocoaSoundCloudUI"]
 	path = CocoaSoundCloudUI
 	url = git://github.com/soundcloud/CocoaSoundCloudUI.git
+[submodule "EECircularMusicPlayerControl"]
+	path = EECircularMusicPlayerControl
+	url = https://github.com/el-eleven/EECircularMusicPlayerControl.git
