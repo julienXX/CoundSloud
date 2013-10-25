@@ -8,6 +8,7 @@
 
 #import "SCUI.h"
 #import "JBTrackListViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface JBTrackListViewController ()
 
@@ -30,18 +31,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -69,7 +63,21 @@
     }
     
     NSDictionary *track = [self.tracks objectAtIndex:indexPath.row];
+    NSString *image = @"";
+    NSString *artworkUrl = [track objectForKey:@"artwork_url"];
+
+    if ((NSNull *)artworkUrl == [NSNull null]) {
+        NSDictionary *user = [track objectForKey:@"user"];
+        NSString *avatarUrl = [user objectForKey:@"avatar_url"];
+        image = avatarUrl;
+    } else {
+        image = artworkUrl;
+    }
+
+    UIImage *artwork = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:image]]];
+    
     cell.textLabel.text = [track objectForKey:@"title"];
+    cell.imageView.image = artwork;cell.imageView.image = artwork;
     
     return cell;
 }
@@ -78,7 +86,7 @@
 {
     NSDictionary *track = [self.tracks objectAtIndex:indexPath.row];
     NSString *streamURL = [track objectForKey:@"stream_url"];
-    
+
     SCAccount *account = [SCSoundCloud account];
     
     [SCRequest performMethod:SCRequestMethodGET
